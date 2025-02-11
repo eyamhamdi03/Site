@@ -160,6 +160,9 @@ export default {
 				warning: "#FEB72F",
 			},
 		},
+		borderRadius : {
+			DEFAULT : '10px'
+		},
     extend: {
     },
   },
