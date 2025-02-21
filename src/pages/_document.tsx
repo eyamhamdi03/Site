@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {/* Add any custom tags for the <head> section here */}
       </Head>
       <body>
         <Main />

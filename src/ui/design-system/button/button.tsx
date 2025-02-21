@@ -27,7 +27,6 @@ export const Button = ({
         sizeStyles: string = "",
         iconSize: number = 0;
 
-    // Variant styles
     switch (variant) {
         case "accent": // Default
             variantStyles = "bg-primary hover:bg-primary-400 text-white rounded";
@@ -54,7 +53,6 @@ export const Button = ({
             break;
     }
 
-    // Size styles
     switch (size) {
         case "small":
             sizeStyles = `text-caption3 font-medium ${
@@ -75,8 +73,6 @@ export const Button = ({
             iconSize = 24;
             break;
     }
-
-    // Determine spinner variant
     const spinnerVariant = variant === "accent" || variant === "icon" ? "white" : "primary";
 
     return (
@@ -85,21 +81,18 @@ export const Button = ({
             className={clsx(
                 variantStyles,
                 sizeStyles,
-                "relative", 
+                "relative",
                 isLoading && "cursor-wait",
                 disabled && "opacity-50 cursor-not-allowed"
             )}
             onClick={() => console.log("click")}
-            disabled={disabled || isLoading} // Disable button when loading
+            disabled={disabled || isLoading}
         >
-            {/* Loading spinner */}
             {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center">
                     <Spinner size="small" variant={spinnerVariant} />
                 </div>
             )}
-
-            {/* Button content */}
             <div className={clsx(isLoading && "invisible")}>
                 {icon && variant === "icon" ? (
                     <icon.icon size={iconSize} />
